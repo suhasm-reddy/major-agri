@@ -14,7 +14,7 @@ import {
   Sprout,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-
+import type { Route } from 'next';
 const navigation = [
   { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { name: "Sensors", href: "/sensors", icon: Activity },
@@ -69,7 +69,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
               return (
                 <li key={item.name}>
                   <Link
-                    href={item.href}
+                    href={item.href as Route}
                     onClick={onClose}
                     className={cn(
                       "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
